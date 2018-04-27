@@ -1,7 +1,3 @@
-// event listener to respond to "Show another quote" button clicks
-// when user clicks anywhere on the button, the "printQuote" function is called
-
-
 var quotes = [
     {
         quote : "You don't realize Jesus is all you need until Jesus is all you have.",
@@ -59,6 +55,7 @@ var quotes = [
         source : "Henry Ford"
     }
 ];
+
 function getRandomColor() {
 	var letters = '0123456789ABCDEF';
 	var color = '#';
@@ -67,12 +64,10 @@ function getRandomColor() {
 	}
 	return color;
 }
-
 function getRandomQuote() {
     var randomNumber = Math.floor(Math.random() * quotes.length);
     return quotes[randomNumber];
 };
-
 function printQuote() {
     document.body.style.backgroundColor = getRandomColor();
     var outQuote = getRandomQuote();
@@ -84,14 +79,9 @@ function printQuote() {
 		string += '<span class="year">' + outQuote.year + '</span>'
 	}
 	'</p>';
-	var outputDiv = document.getElementById('quote-box');
-	outputDiv.innerHTML = string;
+    var outputDiv = document.getElementById('quote-box');
+    outputDiv.innerHTML = string;
 }
      
-   
-   //Prints to HTML the output of the printQuote function, and provides that it is rendered with the proper element from the HTML.
-
-
-
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
